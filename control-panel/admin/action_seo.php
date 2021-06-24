@@ -15,7 +15,7 @@ if(!$result){
  	echo"error".mysql_error();
 	}
 }
-echo "testsdfsdfdsfddfdf";
+
 if($action=="add"){
 
 $seo_tag1=$_POST['seo_tag1'];
