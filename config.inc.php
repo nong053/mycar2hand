@@ -3,15 +3,14 @@ error_reporting (E_ALL ^ E_NOTICE);
 extract($_REQUEST);
 
 $hostname="localhost";
-
 $username="root";
 $password="";
-$dbname="adskosana_db";
+$dbname="mycar2hand_db";
 
 /*
-$username="dashboa2_adsuser";
+$username="xx_user";
 $password="010535546";
-$dbname="dashboa2_adsdb";
+$dbname="xx_db";
 */
 
 

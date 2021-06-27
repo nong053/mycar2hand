@@ -67,7 +67,7 @@ if($conn){
 													 <section>
 														<label class="select">
 															<select name="rt_id" id='rt_id'>
-																<option value="All" selected="">เลือกสื่อสิ่งพิมพ์ทั้งหมด</option>
+																<option value="All" selected="">เลือกประเภทรถ</option>
 																<?php 
 																while($rsTR=mysqli_fetch_array($resultTR)){
 																	?>

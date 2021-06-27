@@ -496,36 +496,42 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                     
                     <li>
                         <a class='linkMainMenu mainmenuTop' id='1' href="#">
-                           <i class="fa fa-cc-amex "></i> ป้ายบิลบอร์ด
+                           <i class="fa fa-car "></i> รถเก๋ง
                         </a>
                     </li>
                     <li >
                         <a class='linkMainMenu mainmenuTop' id='2' href="#">
-                          <i class="fa  fa-cc "></i> ป้ายแบนเนอร์
+                          <i class="fa  fa-car "></i> รถอเนกประสงค์
                         </a>
                     </li> 
                     <li>
                         <a class='linkMainMenu mainmenuTop' id='3' href="#">
-                           <i class="fa  fa-cube "></i> ป้าย LED
+                           <i class="fa  fa-truck "></i> รถออฟโรด
                         </a>
                     </li> 
                     
                     <li>
                         <a class='linkMainMenu mainmenuTop'  id='4' href="#">
-                           <i class="fa fa-slideshare "></i> ป้ายคัทเอ้าท์
+                           <i class="fa fa-truck "></i> รถกระบะ
                         </a>
                     </li> 
                     
                     <li >
                         <a class='linkMainMenu mainmenuTop' id='9' href="#">
-                           <i class="fa fa-building "></i> ป้ายกล่องไฟ
+                           <i class="fa fa-bus "></i> รถตู้
                         </a>
                     </li> 
                     <li >
                         <a class='linkMainMenu mainmenuTop' id='10'href="#">
-                         <i class="fa fa-cubes "></i> ป้ายสติ๊กเกอร์
+                         <i class="fa fa-car "></i> รถสปอร์ต
                         </a>
 					</li> 
+                    <li >
+                        <a class='linkMainMenu mainmenuTop' id='10xx'href="#">
+                         <i class="fa fa-car "></i> รถหรู
+                        </a>
+					</li> 
+                    
 
 
                     <?php 
