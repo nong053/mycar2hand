@@ -149,6 +149,79 @@ $(document).ajaxStop(function() {
 		});
 	};
 	//End provine .
+
+	var callCarType = function(){
+		alert(1);
+		$.ajax({
+			url:"Model/mRealtyDataGeneralAction.php",
+			type:"post",
+			dataType:"json",
+			data:{"paramAction":"car_type"},
+			success:function(data){
+			
+				var Html="";
+				
+				Html+="<select name=\"car_type_id\" id=\"car_type_id\">";
+					
+				Html+="<option  selected=\"\" value=\"All\">เลือกยี่ห้อ</option>";
+					
+					$.each(data,function(index,indexEntry){
+					
+							Html+="<option  value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
+						
+						
+					});
+					
+					Html+="</select><i></i>";
+				
+				$("#carTypeArea").html(Html);
+				$("#car_type_id").change(function(){
+					//alert($(this).val());
+					
+					callCarSubType($(this).val());
+					
+				});
+				
+				
+			}
+		});
+	}
+
+	var callCarSubType = function(car_type_id){
+		$.ajax({
+			url:"Model/mRealtyDataGeneralAction.php",
+			type:"post",
+			dataType:"json",
+			data:{"paramAction":"car_sub_type","car_type_id":car_type_id},
+			success:function(data){
+			
+				var Html="";
+				
+				Html+="<select name=\"car_sub_type_id\" id=\"car_sub_type_id\">";
+					
+				Html+="<option  selected=\"\" value=\"All\">เลือกรุ่นรถ</option>";
+					if(data!='All'){
+						$.each(data,function(index,indexEntry){
+						
+								Html+="<option  value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
+
+						});
+					}
+					
+					Html+="</select><i></i>";
+				
+				$("#carSubTypeArea").html(Html);
+				$("#car_sub_type_id").change(function(){
+					//alert($(this).val());
+					
+					
+					
+				});
+				
+				
+			}
+		});
+	}
 	
 	//start district
 	var callDistrict = function(paramProvince,rdg_address_district_id,rdg_address_sub_district_id,areaID){

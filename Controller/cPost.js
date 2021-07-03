@@ -137,7 +137,7 @@ var postFn=function(loginType){
 			var validation = function(){
 				var validateStr="";
 				if($("select#realtyType").val()=="" || $("select#realtyType").val()==null || $("select#realtyType").val()=='All'){
-					validateStr+="เลือกประเภทสื่อสิ่งพิมพ์ด้วยค่ะ \n"
+					validateStr+="เลือกประเภทรถด้วยครับ \n"
 					
 				}
 				/*
@@ -368,10 +368,10 @@ var postFn=function(loginType){
 						$("#rdg_price_project").val(data['rdg_price_project']);
 						
 						//####rdg_address_province_id####
-						
-						callProvince(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id']);
-						callDistrict(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id'])
-						callSubDistrict(data['rdg_address_district_id'],data['rdg_address_sub_district_id']);
+						callCarType();
+						// callProvince(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id']);
+						// callDistrict(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id'])
+						// callSubDistrict(data['rdg_address_district_id'],data['rdg_address_sub_district_id']);
 						//####rdg_address_no####
 						$("#rdg_address_no").val(data['rdg_address_no']);
 						
@@ -674,7 +674,8 @@ var postFn=function(loginType){
 		
 		
 		//start provine .
-		callProvince();
+		//callProvince();
+		callCarType();
 		//end provine 
 		//Start Call callRealtyFor
 		//callRealtyFor(1);
@@ -759,7 +760,8 @@ var postFn=function(loginType){
 		//end map
 		
 		//start provine .
-		callProvince();
+		//callProvince();
+		callCarType();
 		//end provine 
 
 		//start realty unit 

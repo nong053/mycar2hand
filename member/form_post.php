@@ -44,10 +44,7 @@ $rsRT=mysqli_fetch_array($resultRT);
 						
 						
 						</h4></div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label" > ประกาศสำหรับ</label>
-								<div id="realtyForArea"></div>
-							</div>
+							
 							
 										
 							
@@ -137,45 +134,62 @@ $rsRT=mysqli_fetch_array($resultRT);
 			                    <strong>
 			                   	ประกาศพิเศษหน้าแรก 
 								</strong>
-								<!-- ติดต่อผู้ดูแลระบบ(Admin)
+								ติดต่อผู้ดูแลระบบ(Admin)
 								โทร: 080-992-6565
-								Email: kosit.arom@gmail.com -->
-								ทดลองใช้งานฟรี
+								Email: kosit.arom@gmail.com
+								<!-- ทดลองใช้งานฟรี -->
 			                </div>
 			                
-							<div class="form-group" style="display:none;">
-							
-								<label class="col-lg-3 control-label"> ประเภทประกาศ</label>
-								<div id="realtyForArea">
-									<div class="optonArea">
-										<div class="checkbox">
-											
-											<div id="realtyType1Area" class="disPlaInline">
-											
-											<label>
-											<!-- 
-											<input type="radio" name="realtyType1" class="realtyType1"  id="realtyType1Realty" value="N" checked="checked"> อสังหาริมทรัพย์ทั่วไป 
-											</label>
-											<label>
-											<input type="radio" name="realtyType1" class="realtyType1" value="Y"> สำหรับผู้รับเหมา/วัสดุก่อสร้าง/ฟอร์นิเจอร์ 
-											 -->
-											</label>
-											</div>
-											
-											
-											
-										</div>
-									</div>
-								</div>
-							</div>
 							
 							
 							<div class="form-group">
-								<label for="rdg_title" class="col-lg-3 control-label">รายการประกาศ </label>
+								<label for="rdg_title" class="col-lg-3 control-label">ประเภทรถ </label>
 								<div class="col-lg-9">
 									<div class="select" id="realtyTypeArea"> </div>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label class="col-lg-3 control-label" > ประเภทเกียร์</label>
+								<div id="realtyForArea"></div>
+							</div>
+
+							
+																	
+							<div class="form-group">
+								<label class="col-lg-3 control-label" for="car_type_id">  ยี่ห้อรถ</label>
+								<div class=" col-lg-5">
+									<label class="select" id="carTypeArea">
+										<select name="car_type_id" id="car_type_id">
+												<option disabled="" selected="" value="0">-- กรุณาเลือกยี่ห้อรถ --</option>
+										
+										</select>
+
+										<i></i>
+									</label>
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label class="col-lg-3 control-label" for="car_sub_type_id">  รุ่นรถ</label>
+								<div class=" col-lg-5">
+									<label class="select" id="carSubTypeArea">
+										<select name="car_sub_type_id" id="car_sub_type_id">
+											<option disabled="" selected="" value="0">-- กรุณาเลือกรุ่นรถ --</option>
+
+										</select>
+
+										<i></i>
+									</label>
+								</div>
+							</div>
+
+							
+
+								
+																
 							
 							
 							
@@ -255,112 +269,29 @@ $rsRT=mysqli_fetch_array($resultRT);
 								 -->
 								</div>
 							</div>
+							<div class="headline"><h4>แผนที่</h4></div>
+							<div class="form-group">
+							<label class="col-lg-3 control-label" > ปักหมุดแผนที่ </label>
+								<div class="col-lg-9 " > 
+								<button class="" id="btnCreateMarker">
+								<i class="icon-pin"></i>
+								คลิ๊กเพื่อปักหมุด
+								</button>
 
-															<div class="headline"><h4>รายละเอียดที่ตั้ง</h4></div>
-																	
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_province_id">  จังหวัด</label>
-																		<div class=" col-lg-5">
-																			<label class="select" id="provinceArea">
-																				<select name="rdg_address_province_id1" id="rdg_address_province_id">
-																						<option disabled="" selected="" value="0">-- กรุณาเลือกจังหวัด --</option>
-																						<option value="1">กรุงเทพ</option> 
-																						 <option value="2">นครนายก </option> 
-																						<option value="3"> ปราจีนบุรี </option> 
-																						<option value="4"> สระแก้ว </option> 
-																						<option value="5"> ฉะเชิงเทรา </option> 
-																						<option value="6"> ชลบุรี </option> 
-																						<option value="7"> ระยอง </option> 
-																						<option value="8"> จันทบุรี </option> 
-																						<option value="9"> ตราด  </option> 
- 
-																				</select>
+								<button class=" id="btnClearMarker">
+								<i class="icon-trash"></i>
+								ลบหมุด
+								</button>
+								</div>
+								<div class="col-lg-12">
+									
+									
+										<div id="map-canvas"></div>
+										<p id="demo"></p>
+								</div>
+							</div>
 
-																				<i></i>
-																			</label>
-																		</div>
-																	</div>
-
-
-
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_district_id">  อำเภอ/เขต:</label>
-																		<div class=" col-lg-5">
-																			<label class="select" id="districtArea">
-																				<select name="rdg_address_district_id" id="rdg_address_district_id">
-																					<option disabled="" selected="" value="0">-- กรุณาเลือกอำเภอ/เขต --</option>
-
-																				</select>
-
-																				<i></i>
-																			</label>
-																		</div>
-																	</div>
-
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_sub_district_id">  * ตำบล/แขวง:</label>
-																		<div class=" col-lg-5">
-
-
-																			<label class="select" id="subDistrictArea">
-																				<select name="rdg_address_sub_district_id" id="rdg_address_sub_district_id">
-																					<option disabled="" selected="" value="0">-- กรุณาเลือกตำบล/แขวง --</option>
-																				</select>
-
-																				<i></i>
-																			</label>
-																		</div>
-																	</div>
-
-																	
-
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_no"> เลขที่ </label>
-																		<div class="col-lg-2">
-																			<input type="text" placeholder="เลขที่" name="rdg_address_no" id="rdg_address_no" class="form-control">
-																		</div>
-																	</div>
-
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_road"> ถนน</label>
-																		<div class="col-lg-3">
-																			<input type="text" placeholder="ถนน" name="rdg_address_road" id="rdg_address_road" class="form-control">
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_soi"> ซอย</label>
-																		<div class="col-lg-3">
-																			<input type="text" placeholder="ซอย" name="rdg_address_soi" id="rdg_address_soi" class="form-control">
-																		</div>
-																	</div>
-
-																	<div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_address_post_code"> รหัสไปรษณีย์</label>
-																		<div class="col-lg-2">
-																			<input type="text" placeholder="รหัสไปรษณีย์" name="rdg_address_post_code" id="rdg_address_post_code" class="form-control">
-																		</div>
-																	</div>
-
-																	 <div class="form-group">
-																		<label class="col-lg-3 control-label" for="rdg_map"> ปักหมุดแผนที่</label>
-																		<div class="col-lg-9 " > 
-																		<button class="" id="btnCreateMarker">
-																		<i class="icon-pin"></i>
-																		คลิ๊กเพื่อปักหมุด
-																		</button>
-
-																		<button class=" id="btnClearMarker">
- 																		<i class="icon-trash"></i>
-																		ลบหมุด
-																		</button>
-																		</div>
-																		<div class="col-lg-12">
-																			
-																			
-																			 	<div id="map-canvas"></div>
-																				<p id="demo"></p>
-																		</div>
-																	</div> 
+															
 
 															
 															<div class="showForRealty">

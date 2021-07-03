@@ -1,5 +1,6 @@
-//start provine.
-callProvince();
+//start provine change to call car type instends
+//callProvince();
+callCarType();
 //end provine.
 
 

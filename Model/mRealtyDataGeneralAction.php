@@ -486,6 +486,43 @@ if($_POST['paramAction']=="realtyProjectStatus"){
 
 
 
+if($_POST['paramAction']=="car_type"){
+	
+	$strSQL="SELECT id,car_type_name FROM car_type order by id";
+	$result=mysqli_query($conn,$strSQL);
+	while ($rs=mysqli_fetch_array($result)){
+		if($i==0){
+			$json.="[\"".$rs['id']."\",\"".$rs['car_type_name']."\"]";
+		}else{
+			$json.=",[\"".$rs['id']."\",\"".$rs['car_type_name']."\"]";
+		}
+		$i++;
+	}
+	echo "[".$json."]";
+}
+if($_POST['paramAction']=="car_sub_type"){
+	
+	$strSQL="SELECT id,car_sub_type_name,car_type_id FROM car_sub_type where car_type_id=".$_POST['car_type_id']." order by car_type_id, car_sub_type_name;";
+	$result=mysqli_query($conn,$strSQL);
+	if($result){
+	while ($rs=mysqli_fetch_array($result)){
+		if($i==0){
+			$json.="[\"".$rs['id']."\",\"".$rs['car_sub_type_name']."\"]";
+		}else{
+			$json.=",[\"".$rs['id']."\",\"".$rs['car_sub_type_name']."\"]";
+		}
+		$i++;
+	}
+	echo "[".$json."]";
+	}else{
+		echo "[\"All\"]";
+	}
+	
+}
+
+
+
+
 
 
 ?>

@@ -85,7 +85,7 @@ if($conn){
 													 <section>
 														<label class="select">
 															<select name="rf_id">
-																<option value="All" selected="">เลือกประกาศทุกประเภท</option>
+																<option value="All" selected="">เลือกระบบเกียร์</option>
 																<?php 
 																while($rsRF=mysqli_fetch_array($resultRF)){
 																	?>
@@ -102,7 +102,7 @@ if($conn){
 	  										
 													<div class="col-md-2 col-padding-2">
 															<section>
-																<label class="select" id="provinceArea" >
+																<label class="select" id="carTypeArea" >
 																
 																	
 																</label>
@@ -111,9 +111,9 @@ if($conn){
 													</div>
 													<div class="col-md-2 col-padding-2">
 															<section>
-																<label class="select" id="districtArea">
-																				<select name="rdg_address_district_id" id="rdg_address_district_id">
-																					<option selected="" value="All">เลือกทุกอำเภอ/เขต</option>
+																<label class="select" id="carSubTypeArea">
+																				<select name="car_sub_type_id" id="car_sub_type_id">
+																					<option selected="" value="All">เลือกรุ่นรถ</option>
 
 																				</select>
 																
@@ -121,7 +121,7 @@ if($conn){
 																</label>
 															</section>
 													</div>
-													<div class="col-md-2 col-padding-2">
+													<!-- <div class="col-md-2 col-padding-2">
 															<section>
 																<label class="select" id="subDistrictArea">
 																	<select name="rdg_address_sub_district_id" id="rdg_address_sub_district_id">
@@ -130,7 +130,7 @@ if($conn){
 																	<i></i>
 																</label>
 															</section>
-													</div>
+													</div> -->
 
 													<div class="col-md-2 col-padding-2">
 														<button type="submit"  class="btn-u btn-u-green btn-search1">
