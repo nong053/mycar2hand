@@ -232,7 +232,7 @@ $(document).ajaxStop(function() {
 		};
 		//end provine.
 
-		var callCarType = function(){
+		var callCarType = function(car_type_id){
 		
 			$.ajax({
 				url:"../Model/mRealtyDataGeneralAction.php",
@@ -248,9 +248,11 @@ $(document).ajaxStop(function() {
 					Html+="<option  selected=\"\" value=\"All\">-- กรุณาเลือกยี่ห้อรถ --</option>";
 						
 						$.each(data,function(index,indexEntry){
-						
+							if(car_type_id==indexEntry[0]){
+								Html+="<option  selected value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
+							}else{
 								Html+="<option  value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
-							
+							}
 							
 						});
 						
@@ -269,7 +271,7 @@ $(document).ajaxStop(function() {
 			});
 		}
 	
-		var callCarSubType = function(car_type_id){
+		var callCarSubType = function(car_type_id,car_sub_type_id){
 			$.ajax({
 				url:"../Model/mRealtyDataGeneralAction.php",
 				type:"post",
@@ -284,9 +286,11 @@ $(document).ajaxStop(function() {
 					Html+="<option  selected=\"\" value=\"All\">-- กรุณาเลือกรุ่นรถ --</option>";
 						if(data!='All'){
 							$.each(data,function(index,indexEntry){
-							
+								if(car_sub_type_id==indexEntry[0]){
+									Html+="<option  selected value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
+								}else{
 									Html+="<option  value=\""+indexEntry[0]+"\">"+indexEntry[1]+"</option> ";
-	
+								}
 							});
 						}
 						

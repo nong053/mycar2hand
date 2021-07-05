@@ -368,7 +368,9 @@ var postFn=function(loginType){
 						$("#rdg_price_project").val(data['rdg_price_project']);
 						
 						//####rdg_address_province_id####
-						callCarType();
+						
+						callCarType(data['car_type_id']);
+						callCarSubType(data['car_type_id'],data['car_sub_type_id']);
 						// callProvince(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id']);
 						// callDistrict(data['rdg_address_province_id'],data['rdg_address_district_id'],data['rdg_address_sub_district_id'])
 						// callSubDistrict(data['rdg_address_district_id'],data['rdg_address_sub_district_id']);

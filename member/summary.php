@@ -5,7 +5,7 @@
 	$rdg_id=$_POST['rdg_id'];
 	$strSQLRDG="
 	select rdg.*,rf_name,rt_name,rps_name,p.PROVINCE_NAME,
-	d.DISTRICT_NAME,a.AMPHUR_NAME,ru.ru_name,
+	d.DISTRICT_NAME,a.AMPHUR_NAME,ru.ru_name,ct.car_type_name,cst.car_sub_type_name,
 	(select ru2.ru_name  from realty_unit ru2 where ru2.ru_id= rdg.rdg_estate_unit) as rdg_estate_unit_name,
 	rt.cst_type 
 	from realty_data_general rdg
@@ -15,12 +15,20 @@
 	ON rt.rt_id=rdg.rt_id
 	LEFT JOIN realty_project_status rps
 	ON rps.rps_id=rdg.rps_id
+
+	LEFT JOIN car_type ct
+	ON ct.id=rdg.car_type_id
+	LEFT JOIN car_sub_type cst
+	on cst.id=rdg.car_sub_type_id
+    
+
 	LEFT JOIN province p
 	ON p.PROVINCE_ID=rdg.rdg_address_province_id
 	LEFT JOIN district d
 	on d.DISTRICT_ID=rdg_address_sub_district_id
 	LEFT JOIN amphur a 
 	on a.AMPHUR_ID=rdg_address_district_id
+	
 	LEFT JOIN realty_unit ru
 	on ru.ru_id=rdg.rdg_area_unit
 	
@@ -64,7 +72,7 @@
 	
 	<link rel="stylesheet" href="../css/cssSummary.css" />
 	<script type="text/javascript" src="../Controller/cSummary.js"> </script>
-		<div class="headline"><h2>สรุปข้อมูลการประกาศ(#<?=$rsRDG['rdg_id']?>)</h2></div>
+		<div class="headline"><h2>สรุปประกาศเลขที่(#<?=$rsRDG['rdg_id']?>)</h2></div>
 		<div class="headline"><h4>ข้อมูลทั่วไป </h4></div>
 		<!-- -ข้อมูลทั่วไป-->
 			<div class="row">
@@ -73,15 +81,25 @@
 				
 			</div>
 			<div class="row">
-				<label class="col-md-3 control-label titleGroup" > ประกาศสำหรับ:</label>
+				<label class="col-md-3 control-label titleGroup" > ประเภทเกียร์:</label>
 				<div class="col-md-9"><?=$rsRDG['rf_name']?></div>
 				
 			</div>
 	
 			<div class="row">
-				<label class="col-md-3 control-label titleGroup" > ประเภทอสังหาริมทรัพย์ :</label>
+				<label class="col-md-3 control-label titleGroup" > ประเภทรถ :</label>
 				<div class="col-md-9"><?=$rsRDG['rt_name']?></div>
 			</div>
+
+			<div class="row">
+					<label class="col-md-3 control-label titleGroup" > ยี่ห้อรถ :</label>
+					<div class="col-md-9"><?=$rsRDG['car_type_name']?></div>
+			</div>
+			<div class="row">
+					<label class="col-md-3 control-label titleGroup" > รุ่นรถ :</label>
+					<div class="col-md-9"><?=$rsRDG['car_sub_type_name']?></div>
+			</div>
+
 	
 			<div class="row">
 				<label class="col-md-3 control-label titleGroup" > หัวข้อประกาศ :</label>
@@ -128,15 +146,9 @@
 			
 	
 	
-			<div class="row">
-					<label class="col-md-3 control-label titleGroup" > จังหวัด :</label>
-					<div class="col-md-9"><?=$rsRDG['PROVINCE_NAME']?></div>
-			</div>
-			<div class="row">
-					<label class="col-md-3 control-label titleGroup" > อำเภอ/เขต :</label>
-					<div class="col-md-9"><?=$rsRDG['AMPHUR_NAME']?></div>
-			</div>
-			<div class="row">
+			
+			
+			<!-- <div class="row">
 					<label class="col-md-3 control-label titleGroup" > ตำบล/แขวง :</label>
 					<div class="col-md-9"><?=$rsRDG['DISTRICT_NAME']?></div>
 			</div>
@@ -151,7 +163,7 @@
 			<div class="row">
 					<label class="col-md-3 control-label titleGroup" > รหัสไปรษณีย์  :</label>
 					<div class="col-md-9"><?=$rsRDG['rdg_post_code']?></div>
-			</div>
+			</div> -->
 			
 	
 			

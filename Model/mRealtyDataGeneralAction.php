@@ -61,6 +61,8 @@ if($_POST['paramAction']=="realtyDataGeneralById"){
 				,\"rdg_name_project\":\"".$rs['rdg_name_project']."\"
 				,\"rdg_address_project\":\"".$rs['rdg_address_project']."\"
 				,\"rdg_address_no\":\"".$rs['rdg_address_no']."\"
+				,\"car_type_id\":\"".$rs['car_type_id']."\"
+				,\"car_sub_type_id\":\"".$rs['car_sub_type_id']."\"
 				,\"rdg_address_province_id\":\"".$rs['rdg_address_province_id']."\"
 				,\"rdg_address_district_id\":\"".$rs['rdg_address_district_id']."\"
 				,\"rdg_address_sub_district_id\":\"".$rs['rdg_address_sub_district_id']."\"
@@ -179,9 +181,17 @@ if($_POST['paramAction']=="realtyDataGeneralSave"){
 	$rdg_address_district_id=$_POST['rdg_address_district_id'];
 	$rdg_address_no=$_POST['rdg_address_no'];
 	$rdg_address_post_code=$_POST['rdg_address_post_code'];
+
+	
+	$car_type_id=$_POST['car_type_id'];
+	$car_sub_type_id=$_POST['car_sub_type_id'];
+
 	$rdg_address_province_id=$_POST['rdg_address_province_id'];
 	$rdg_address_road=$_POST['rdg_address_road'];
 	$rdg_address_soi=$_POST['rdg_address_soi'];
+
+	$car_type_id=$_POST['car_type_id'];
+	$car_sub_type_id=$_POST['car_sub_type_id'];
 	
 	$rdg_address_sub_district_id=$_POST['rdg_address_sub_district_id'];
 	$rdg_area_number=$_POST['rdg_area_number'];
@@ -264,6 +274,11 @@ if($_POST['paramAction']=="realtyDataGeneralSave"){
 				rdg_price='$rdg_price',
 				rdg_name_project='$rdg_name_project',
 				rdg_address_no='$rdg_address_no',
+
+				car_type_id='$car_type_id',
+				car_sub_type_id='$car_sub_type_id',
+
+				
 				rdg_address_province_id='$rdg_address_province_id',
 				rdg_address_district_id='$rdg_address_district_id',
 				rdg_address_sub_district_id='$rdg_address_sub_district_id',
@@ -310,6 +325,9 @@ if($_POST['paramAction']=="realtyDataGeneralSave"){
 				rdg_price,
 				rdg_name_project,
 				rdg_address_no,
+
+				car_type_id,
+				car_sub_type_id,
 				rdg_address_province_id,
 				rdg_address_district_id,
 				rdg_address_sub_district_id,
@@ -350,6 +368,8 @@ if($_POST['paramAction']=="realtyDataGeneralSave"){
 			'$rdg_price',
 			'$rdg_name_project',
 			'$rdg_address_no',
+			'$car_type_id',
+			'$car_sub_type_id',
 			'$rdg_address_province_id',
 			'$rdg_address_district_id',
 			'$rdg_address_sub_district_id',

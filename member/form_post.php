@@ -33,7 +33,7 @@ $rsRT=mysqli_fetch_array($resultRT);
 						<?php 
 						if($rsRT['rdg_id']){
 							?>
-							แก้ไขข้อมูล<?=$rsRT['rt_name']?>(#<?=$rsRT['rdg_id']?>)
+							แก้ไขข้อมูล <?=$rsRT['rt_name']?>(#<?=$rsRT['rdg_id']?>)
 							<?php
 						}else{
 							?>

@@ -700,15 +700,15 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                         <div class="headline"><h2>เมนูหลัก</h2></div>
                         <ul class="list-unstyled link-list">
                             <li><a href="index.php">หน้าแรก</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="# " class="mainmenuTop" id='1'>ป้ายบิลบอร์ด</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="# " class="mainmenuTop" id='2'>ป้ายแบนเนอร์</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="#" class="mainmenuTop" id='3'>ป้าย LED</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="#" class="mainmenuTop" id='4'>ป้ายคัทเอาท์,ป้ายกองโจร</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="# " class="mainmenuTop" id='6'>ป้ายหน้าอาคาร, ร้านค้า</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="# " class="mainmenuTop" id='7'>ป้ายโรงงาน,ป้ายบริษัท,ป้ายทาวเวอร์,ป้ายโครงการ</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="#" class="mainmenuTop" id='9'>ป้ายกล่องไฟ</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="#" class="mainmenuTop" id='10'>ป้ายสติ๊กเกอร์, สติ๊กเกอร์ติดรถ</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="# " class="mainmenuTop" id='11'>ป้ายอื่นๆ</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='1'>รถเก๋ง</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='2'>รถอเนกประสงค์</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='3'>รถออฟโรด</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='4'>รถกระบะ</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='6'>รถตู้</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='7'>รถสปอร์ต</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='9'>รถหรู</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='10'>รถอื่นๆ</a><i class="fa fa-angle-right " ></i></li>
+                            
 
 						
                         </ul>
@@ -722,7 +722,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                         <div class="headline"><h2>เกี่ยวกับเรา</h2></div>
                         <ul class="list-unstyled link-list">
                             <li>
-                            <a href="#">ศูนย์รวมป้ายโฆษณา ,สื่อสิ่งพิมพ์,สื่อโฆษณา,ป้ายบิลบอร์ด,ป้าย LED,ป้าย คัทเอ้าท์,ป้ายกล่องไฟ,ป้ายสติ๊กเกอร์</a>
+                            <a href="#">ศูนย์รวมรถมือสอง สภาพดี</a>
                             </li>
 
 

@@ -13,7 +13,7 @@ $rtc_id=$_GET['rtc_id'];
 
 
 $strSQL1="
-select rdg.*,rf_name,rt_name,rps_name,p.PROVINCE_NAME,d.DISTRICT_NAME,a.AMPHUR_NAME,ru.ru_name,
+select rdg.*,rf_name,rt_name,rps_name,p.PROVINCE_NAME,d.DISTRICT_NAME,a.AMPHUR_NAME,ru.ru_name,ct.car_type_name,cst.car_sub_type_name,
 (select ru2.ru_name  from realty_unit ru2 where ru2.ru_id= rdg.rdg_estate_unit) as rdg_estate_unit_name
 from realty_data_general rdg
 LEFT JOIN realty_for rf
@@ -22,6 +22,13 @@ LEFT JOIN realty_type rt
 ON rt.rt_id=rdg.rt_id
 LEFT JOIN realty_project_status rps
 ON rps.rps_id=rdg.rps_id
+
+LEFT JOIN car_type ct
+	ON ct.id=rdg.car_type_id
+	LEFT JOIN car_sub_type cst
+	on cst.id=rdg.car_sub_type_id
+
+
 LEFT JOIN province p
 ON p.PROVINCE_ID=rdg.rdg_address_province_id
 LEFT JOIN district d
@@ -276,14 +283,24 @@ $rdg_id=$rs1['rdg_id'];
 													<div class="headline"><h4>ข้อมูลทั่วไป </h4></div>
 	<!-- -ข้อมูลทั่วไป-->
 		<div class="row">
-			<label class="col-md-3 control-label titleGroup" > ประกาศสำหรับ:</label>
+			<label class="col-md-3 control-label titleGroup" > ระบบเกียร์:</label>
 			<div class="col-md-9"><?=$rs1['rf_name']?></div>
 			
 		</div>
 
 		<div class="row">
-			<label class="col-md-3 control-label titleGroup" > ประเภทสื่อสิ่งพิมพ์:</label>
+			<label class="col-md-3 control-label titleGroup" > ประเภทรถ:</label>
 			<div class="col-md-9"><?=$rs1['rt_name']?></div>
+		</div>
+
+		<div class="row">
+			<label class="col-md-3 control-label titleGroup" > ยี่ห้อรถ:</label>
+			<div class="col-md-9"><?=$rs1['car_type_name']?></div>
+		</div>
+
+		<div class="row">
+			<label class="col-md-3 control-label titleGroup" > รุ่นรถ:</label>
+			<div class="col-md-9"><?=$rs1['car_sub_type_name']?></div>
 		</div>
 
 		<div class="row">
@@ -306,18 +323,19 @@ $rdg_id=$rs1['rdg_id'];
 	<div class="headline"><h4>ข้อมูลราคา </h4></div>
 	<!-- -ข้อมูลราคา-->
 		<div class="row">
-			<label class="col-md-3 control-label titleGroup" > ประกาศ<?=$rs1['rf_name']?> :</label>
+			<label class="col-md-3 control-label titleGroup" > ราคา :</label>
 			
 			<div class="col-md-9"><?=number_format($rs1['rdg_price'])?> บาท</div>
 		</div>
 	<!-- -ข้อมูลราคา-->
+	<br style="clear:both">
 	<div class="headline"><h4>ข้อมูลที่ตั้ง </h4></div>
 	<!-- -ข้อมูลที่ตั้ง-->
 		
 		
 
 
-		<div class="row">
+		<!-- <div class="row">
 				<label class="col-md-3 control-label titleGroup" > จังหวัด :</label>
 				<div class="col-md-9"><?=$rs1['PROVINCE_NAME']?></div>
 		</div>
@@ -341,7 +359,7 @@ $rdg_id=$rs1['rdg_id'];
 				<label class="col-md-3 control-label titleGroup" > รหัสไปรษณีย์  :</label>
 				<div class="col-md-9"><?=$rs1['rdg_post_code']?></div>
 		</div>
-		
+		 -->
 
 	
 		<div class="row">
@@ -351,7 +369,7 @@ $rdg_id=$rs1['rdg_id'];
 					
 				</div>
 		</div>
-	
+	<br style="clear:both">
 	<!-- -ข้อมูลที่ตั้ง-->
 	<div class="headline"><h4>ข้อมูลเพิ่มเติม </h4></div>
 	
@@ -385,6 +403,7 @@ $rdg_id=$rs1['rdg_id'];
 	$strsSQLAttach="select * from realty_doc where rdg_id='$rdg_id'";
 	$reslutAttach=mysqli_query($conn,$strsSQLAttach);
 	?>
+	<br style="clear:both">
 	<div class="headline"><h4> <i class='fa fa-file-pdf-o'></i>เอกสารแนบ </h4></div>
 	<?php 
 	while($rsAttach=mysqli_fetch_array($reslutAttach)){

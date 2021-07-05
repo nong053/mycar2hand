@@ -151,7 +151,7 @@ $(document).ajaxStop(function() {
 	//End provine .
 
 	var callCarType = function(){
-		alert(1);
+		
 		$.ajax({
 			url:"Model/mRealtyDataGeneralAction.php",
 			type:"post",
